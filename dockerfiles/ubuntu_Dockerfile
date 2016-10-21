@@ -1,0 +1,28 @@
+FROM ubuntu
+
+RUN apt-get -y update
+RUN apt-get -y install lighttpd zip unzip tar wget
+RUN apt-get -y install php php-xml php-pdo php-gd php-mbstring sqlite3 libsqlite3-dev
+
+RUN wget --no-check-certificate https://cn-zh.wordpress.org/latest-ja.tar.gz
+RUN wget --no-check-certificate https://downloads.wordpress.org/plugin/sqlite-integration.1.8.1.zip
+RUN tar xvfz ./latest-ja.tar.gz
+RUN unzip ./sqlite-integration.1.8.1.zip
+RUN rm -f ./latest-ja.tar.gz
+RUN rm -f ./sqlite-integration.1.8.1.zip
+RUN mv wordpress /var/lib/wordpress
+RUN chown -R apache:apache /var/lib/wordpress
+RUN mv /var/lib/wordpress/wp-config-sample.php /var/lib/wordpress/wp-config.php
+RUN mv sqlite-integration /var/lib/wordpress/wp-content/plugins/
+RUN mv /var/lib/wordpress/wp-content/plugins/sqlite-integration/db.php \
+       /var/lib/wordpress/wp-content/
+ 
+RUN echo "yes n | cp -ripf /var/lib/wordpress/* /var/www/html/ > /dev/null 2>&1" >> /root/.bash_profile
+ 
+EXPOSE 80
+VOLUME /var/www/html
+ 
+RUN service lighttpd reload 
+ 
+EXPOSE 80
+
