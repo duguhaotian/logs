@@ -1,5 +1,5 @@
 {
-    "listen": ":10086",
+    "listen": ":18888",
     "target": "127.0.0.1:8383",
     "key": "haozi",
     "crypt": "aes-128",
@@ -17,6 +17,6 @@
     "resend": 0,
     "nc": 0,
     "sockbuf": 4194304,
-    "keepalive": 60,
-    "log": "/root/kcptun/kcptun.log"
+    "keepalive": 10,
+    "log": "/root/kcptun/kcptun22.log"
 }
