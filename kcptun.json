@@ -10,13 +10,13 @@
     "datashard": 70,
     "parityshard": 30,
     "dscp": 46,
-    "nocomp": false,
+    "nocomp": yes,
     "acknodelay": false,
     "nodelay": 0,
-    "interval": 40,
+    "interval": 10,
     "resend": 0,
     "nc": 0,
     "sockbuf": 4194304,
-    "keepalive": 50,
+    "keepalive": 10,
     "log": "/root/kcptun/kcptun22.log"
 }
