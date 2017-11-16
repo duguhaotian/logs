@@ -2,7 +2,7 @@
     "listen": ":10086",
     "target": "127.0.0.1:8383",
     "key": "haozi",
-    "crypt": "salsa20",
+    "crypt": "aes-128",
     "mode": "fast2",
     "mtu": 1350,
     "sndwnd": 1024,
