@@ -1,7 +1,7 @@
 {
-    "listen": ":29900",
-    "target": "127.0.0.1:8388",
-    "key": "test",
+    "listen": ":10086",
+    "target": "127.0.0.1:8383",
+    "key": "haozi",
     "crypt": "salsa20",
     "mode": "fast2",
     "mtu": 1350,
@@ -17,6 +17,6 @@
     "resend": 0,
     "nc": 0,
     "sockbuf": 4194304,
-    "keepalive": 10,
+    "keepalive": 60,
     "log": "/root/kcptun/kcptun.log"
 }
